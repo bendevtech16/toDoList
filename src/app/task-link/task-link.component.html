@@ -1,0 +1,33 @@
+<main class="text-center bg-red-200 ">
+<section class=" w-[600px] h-[800px] mx-5 justify-items-center  absolute left-[40%] mb-40  p-10">
+  <form [formGroup]="profilForm" (ngSubmit)="onsubmit()" class="shadow-xl my-10 w-[500px] block
+   space-y-5 items-center pb-2 absolute h-[400px]">
+    <input type="text" id="task" [formControl] ="new_task" class=" px-2 h-[70px] w-[480px] border mr-5 outline-none  text-xl font-mono hover:border-blue-500" placeholder="add new task" required>
+    <!-- <input type="text" id="task1" formControlName ="new_task" class=" px-2 h-[70px] w-[480px] border mr-5 outline-none  text-xl font-mono hover:border-blue-500" placeholder="other new task" required>
+    <input type="text" id="task2" formControlName ="new_task" class=" px-2 h-[70px] w-[480px] border mr-5 outline-none  text-xl font-mono hover:border-blue-500" placeholder="other new task" required> -->
+    <button type="submit" class="bg-[#1976D2]
+    hover:bg-[#f1f1f1] hover:text-[#1976D2]
+    resize-none md:resize
+    hover:border-[#1976D2] hover:border-2 text-[#f1f1f1] h-[70px] w-[250px] text-3xl font-mono rounded-[7px] outline-none " (click)="addTask()" >Add task</button>
+    <p>Value: {{ new_task.value }}</p>
+    <!-- <p>value2: {{this.taskOne}}</p>
+    <p>value3: {{this.taskTwo}}</p> -->
+    <footer class="w-full h-32 bg-[#1976D2] text-[#f1f1f1] relative">
+    <p class="text-center leading-[120px]">created by bendevTech &COPY; 2024</p>
+    </footer>
+  </form>
+</section>
+<section class="absolute top-[30%] left-[20%] translate-x-[-50%] shadow-xl h-[400px] w-[300px] bg-[#1976D2] text-[#f1f1f1]">
+  <h1 class=" font-bold underline text-3xl">LIST OF TASK</h1>
+  <hr class="my-3">
+  <ol class="text-[#f1f1f1]">
+    <li class="text-[#f1f1f1] h-auto">
+      @for (item of table_task; track item) {
+        <h1 class="font-mono text-2xl">{{ item }} <br></h1>
+        }
+    </li>
+
+  </ol>
+</section>
+
+</main>
